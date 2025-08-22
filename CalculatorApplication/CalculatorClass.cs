@@ -17,13 +17,13 @@ namespace CalculatorApplication
             add 
             {
                 Console.WriteLine("Added The Delegate");
-                CalculateEvent += value;
+                calculateEvent += value;
             }
 
             remove
             {
                 Console.WriteLine("Remove The Delegate");
-                CalculateEvent -= value;
+                calculateEvent -= value;
             }
         }
 
@@ -36,5 +36,14 @@ namespace CalculatorApplication
         public double GetDifference(double num1, double num2) { 
             return num1 - num2;
         }
+
+        public double GetProduct(double num1, double num2) { 
+            return num1 * num2;
+        }
+
+        public double GetQuotient(double num1, double num2) { 
+            return num1 / num2;
+        }
+
     }
 }

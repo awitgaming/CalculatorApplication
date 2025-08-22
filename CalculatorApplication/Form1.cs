@@ -49,28 +49,44 @@ namespace CalculatorApplication
             double num1 = Convert.ToDouble(txtBoxInput1.Text);
             double num2 = Convert.ToDouble(txtBoxInput2.Text);
 
-            double result = 0;
+           
 
             string operate = cbOperator.Text;
 
-            if (operate == "+")
-            {
-                result = cal.GetSum(num1, num2);
+            if (operate == "+") {
+                cal.CalculateEvent += new Formula<double>(cal.GetSum);
+                lblDisplayTotal.Text = cal.GetSum(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetSum);
+
             }
-            else if (operate == "-") { 
-                result = cal.GetDifference(num1, num2);
-            } else
+            else if (operate == "-") {
+
+                cal.CalculateEvent += new Formula<double>(cal.GetDifference);
+                lblDisplayTotal.Text = cal.GetDifference(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetDifference);
+            } 
+            else if(operate == "*") {
+              
+                cal.CalculateEvent += new Formula<double>(cal.GetProduct);
+                lblDisplayTotal.Text = cal.GetProduct(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetProduct);
+            }
+            else if(operate == "/") {
+                cal.CalculateEvent += new Formula<double>(cal.GetQuotient);
+                lblDisplayTotal.Text = cal.GetQuotient(num1, num2).ToString();
+                cal.CalculateEvent -= new Formula<double>(cal.GetQuotient);
+
+            }
+            else
             {
                 MessageBox.Show("Please SELECT a valid Operator!",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                
             }
 
 
 
-            lblDisplayTotal.Text = cal.GetSum(num1,num2).ToString();
 
 
         }
