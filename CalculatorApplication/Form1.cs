@@ -24,6 +24,11 @@ namespace CalculatorApplication
 
         private void FrmCalculator_Load(object sender, EventArgs e)
         {
+            cbOperator.Items.Add("+");
+            cbOperator.Items.Add("-");
+            cbOperator.Items.Add("*");
+            cbOperator.Items.Add("/");
+            cbOperator.SelectedItem = -1;
 
         }
 
@@ -34,7 +39,7 @@ namespace CalculatorApplication
 
         private void lblDisplayTotal_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
