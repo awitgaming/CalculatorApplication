@@ -49,7 +49,29 @@ namespace CalculatorApplication
             double num1 = Convert.ToDouble(txtBoxInput1.Text);
             double num2 = Convert.ToDouble(txtBoxInput2.Text);
 
-           
+            double result = 0;
+
+            string operate = cbOperator.Text;
+
+            if (operate == "+")
+            {
+                result = cal.GetSum(num1, num2);
+            }
+            else if (operate == "-") { 
+                result = cal.GetDifference(num1, num2);
+            } else
+            {
+                MessageBox.Show("Please SELECT a valid Operator!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                
+            }
+
+
+
+            lblDisplayTotal.Text = cal.GetSum(num1,num2).ToString();
+
 
         }
     }
