@@ -41,7 +41,16 @@ namespace CalculatorApplication
 
         private void lblDisplayTotal_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            double num1 = Convert.ToDouble(txtBoxInput1.Text);
+            double num2 = Convert.ToDouble(txtBoxInput2.Text);
+
+           
+
         }
     }
 }

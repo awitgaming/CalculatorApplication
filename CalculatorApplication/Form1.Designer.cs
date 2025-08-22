@@ -77,6 +77,7 @@
             this.btnEqual.TabIndex = 3;
             this.btnEqual.Text = "Calculate";
             this.btnEqual.UseVisualStyleBackColor = true;
+            this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
             // label2
             // 
