@@ -12,9 +12,11 @@ namespace CalculatorApplication
 {
     public partial class FrmCalculator : Form
     {
+        CalculatorClass cal;
         public FrmCalculator()
         {
             InitializeComponent();
+            cal = new CalculatorClass();
         }
 
         private void TxtBox1_TextChanged(object sender, EventArgs e)
