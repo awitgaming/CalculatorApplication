@@ -9,6 +9,6 @@ namespace CalculatorApplication
     public delegate T Formula<T>(T num1,  T num2);
     internal class CalculatorClass
     {
-
+        public Formula<double> formula;
     }
 }
